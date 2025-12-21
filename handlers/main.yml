@@ -1,0 +1,6 @@
+---
+- name: Reboot the system
+  ansible.builtin.reboot:
+    reboot_timeout: 600
+  listen: reboot system
+  when: ansible_connection not in ["container", "docker", "community.docker.docker"]

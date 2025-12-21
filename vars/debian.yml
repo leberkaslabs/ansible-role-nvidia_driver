@@ -1,0 +1,13 @@
+---
+# NVIDIA Driver APT Repository URL
+# Constructs the full URL to the NVIDIA driver APT repository using the base URL, distribution name, and architecture.
+nvidia_driver_apt_repository: >-
+  {{ nvidia_driver_repo_url ~ '/' ~ nvidia_driver_distribution_name ~ '/' ~ nvidia_driver_architecture }}
+
+# NVIDIA Driver APT GPG Key
+# The URL to the GPG key used to verify the authenticity of packages from the NVIDIA driver repository.
+_nvidia_driver_apt_gpg_key:
+  debian12: 3bf863cc.pub
+  # debian13: 8793F200.pub
+nvidia_driver_apt_gpg_key: >-
+  {{ nvidia_driver_apt_repository ~ '/' ~ _nvidia_driver_apt_gpg_key[nvidia_driver_distribution_name] }}

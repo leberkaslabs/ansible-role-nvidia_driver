@@ -1,0 +1,17 @@
+---
+- name: Include the NVIDIA driver distribution variables
+  ansible.builtin.include_vars:
+    file: "{{ ansible_facts.os_family | lower ~ '.yml' }}"
+
+- name: Setup the NVIDIA driver repository
+  ansible.builtin.include_tasks:
+    file: "{{ 'setup_' ~ ansible_facts.os_family | lower ~ '.yml' }}"
+
+- name: Install the NVIDIA driver packages
+  ansible.builtin.package:
+    name:
+      - nvidia-driver-cuda
+      - nvidia-kernel-dkms
+    state: present
+    update_cache: true
+  notify: reboot system

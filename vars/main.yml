@@ -1,0 +1,16 @@
+---
+# NVIDIA Driver Architecture
+# It dynamically selects based on the system architecture (aarch64 for ARM, amd64 for others).
+_nvidia_driver_architecture:
+  x86_64: amd64
+  aarch64: sbsa
+nvidia_driver_architecture: "{{ _nvidia_driver_architecture[ansible_architecture] }}"
+
+# NVIDIA Driver Distribution Name and Version
+# This concatenates the distribution name and its major version for targeting the correct repo.
+nvidia_driver_distribution_name: >-
+  {{ (ansible_facts.distribution | lower) ~ ansible_facts.distribution_major_version }}
+
+# NVIDIA Driver Repository Base URL
+# This is the base URL for the NVIDIA driver repository used for downloading driver packages.
+nvidia_driver_repo_url: https://developer.download.nvidia.com/compute/cuda/repos

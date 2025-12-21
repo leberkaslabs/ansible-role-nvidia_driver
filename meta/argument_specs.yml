@@ -1,0 +1,11 @@
+---
+argument_specs:
+  main:
+    short_description: nvidia_driver
+    description: Install the NVIDIA driver.
+    author: dudecalledbro
+    options:
+      nvidia_driver_repository_filename:
+        type: str
+        required: true
+        description: NVIDIA Driver Repository Filename.

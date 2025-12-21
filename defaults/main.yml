@@ -1,0 +1,4 @@
+---
+# NVIDIA Driver Repository Filename
+# This specifies the filename of the NVIDIA driver repository configuration file.
+nvidia_driver_repository_filename: nvidia-driver

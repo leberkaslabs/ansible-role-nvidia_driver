@@ -1,0 +1,18 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: nvidia_driver
+  author: dudecalledbro
+  description: Install the NVIDIA driver.
+  license: License (MIT)
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+
+  galaxy_tags:
+    - container
+    - docker
+    - nvidia

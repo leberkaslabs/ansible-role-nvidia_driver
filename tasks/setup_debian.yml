@@ -1,0 +1,22 @@
+---
+- name: Install prerequisite packages for NVIDIA driver installation
+  ansible.builtin.apt:
+    name:
+      - curl
+      - gnupg2
+      # Packages required for deb822 repository compatibility
+      - python3-debian
+    state: present
+
+- name: Install required kernel headers for NVIDIA driver (skip on containers)
+  ansible.builtin.apt:
+    name: "linux-headers-{{ ansible_kernel }}"
+  when: ansible_connection not in ["container", "docker", "community.docker.docker"]
+
+- name: Configure the NVIDIA driver APT repository
+  ansible.builtin.deb822_repository:
+    name: "{{ nvidia_driver_repository_filename }}"
+    types: deb
+    uris: "{{ nvidia_driver_apt_repository }}"
+    signed_by: "{{ nvidia_driver_apt_gpg_key }}"
+    suites: /
