@@ -4,7 +4,7 @@
 _nvidia_driver_architecture:
   x86_64: x86_64
   aarch64: sbsa
-nvidia_driver_architecture: "{{ _nvidia_driver_architecture[ansible_architecture] }}"
+nvidia_driver_architecture: "{{ _nvidia_driver_architecture[ansible_facts.architecture] }}"
 
 # NVIDIA Driver Distribution Name and Version
 # This concatenates the distribution name and its major version for targeting the correct repo.
