@@ -1,7 +1,7 @@
 ---
 name: Ansible Molecule
 
-on:
+'on':
   push:
     branches:
       - main
@@ -14,9 +14,6 @@ jobs:
       matrix:
         include:
           - image: molecule-debian-12
-          # - image: molecule-debian-13
-          # - image: molecule-rockylinux-10
-          # - image: molecule-rockylinux-9
 
     steps:
       - name: Checkout

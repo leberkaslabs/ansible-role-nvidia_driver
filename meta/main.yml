@@ -2,11 +2,13 @@
 dependencies: []
 
 galaxy_info:
-  role_name: nvidia_driver
-  author: dudecalledbro
+  author: Niclas Spreng
   description: Install the NVIDIA driver.
-  license: License (MIT)
+  license: MIT
   min_ansible_version: "2.15"
+  namespace: leberkaslabs
+  role_name: nvidia_driver
+
   platforms:
     - name: Debian
       versions:

@@ -10,6 +10,7 @@
 
 - name: Install required kernel headers for NVIDIA driver (skip on containers)
   ansible.builtin.apt:
+    # yamllint disable-line rule:quoted-strings
     name: "linux-headers-{{ ansible_kernel }}"
   when: ansible_connection not in ["container", "docker", "community.docker.docker"]
 

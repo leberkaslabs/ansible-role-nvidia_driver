@@ -5,7 +5,7 @@ driver:
   name: docker
 platforms:
   - name: instance
-    # Example "dudecalledbro/molecule-debian-12:latest"
+    # yamllint disable-line rule:quoted-strings
     image: "${NAMESPACE:-dudecalledbro}/${IMAGE:-molecule-debian-12}:${TAG:-latest}"
     command: ""
     volumes:

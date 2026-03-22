@@ -1,8 +1,8 @@
-# Ansible Role: NVIDIA Driver
+# Ansible Role: nvidia_driver
 
 [![Ansible Molecule](https://github.com/leberkaslabs/ansible-role-nvidia_driver/actions/workflows/molecule.yml/badge.svg)](https://github.com/leberkaslabs/ansible-role-nvidia_driver/actions/workflows/molecule.yml)
 
-Install the NVIDIA driver (currently only Debian 12).
+Install the NVIDIA driver.
 
 ## Prerequisites
 
@@ -16,11 +16,9 @@ The default values for the variables are set in [defaults/main.yml](defaults/mai
 ```yaml
 - hosts: all
   roles:
-    - role: dudecalledbro.nvidia_driver
+    - role: leberkaslabs.nvidia_driver
 ```
 
 ## License
 
-Copyright © 2025 Niclas Spreng
-
-Licensed under the [MIT license](LICENSE).
+Copyright (c) 2026 Niclas Spreng
